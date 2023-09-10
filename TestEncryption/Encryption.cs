@@ -36,7 +36,7 @@ namespace PasswordHasher
             {
                 Console.WriteLine("error!: " + ex.Message);
             }
-            return false; // Return True for valid or false for non valid
+            return false; // Return True for valid or false for non valid!
         }
     }
 }
