@@ -22,27 +22,27 @@ namespace PasswordHasher
             {
                 Console.Clear();
                 Console.ForegroundColor = ConsoleColor.Cyan;
-                Console.WriteLine("\n\t Bcrypt Password Hasher by Samuel Gjekic");
+                Console.WriteLine("\t###########################################\n\t Bcrypt Password Hasher by Samuel Gjekic \n\t########################################### \n \n");
                 Console.ForegroundColor = ConsoleColor.Green;
-                Console.WriteLine("\n\t1. Create password hash");
-               Console.WriteLine("\t2. Verify password hash");
+                Console.WriteLine("1. Create password hash");
+               Console.WriteLine("2. Verify password hash");
                Int32.TryParse(Console.ReadLine(), out int val);
                 switch(val)
                 {
                     case 1:// Hash a password with Bcrypt hasher
-                        Console.WriteLine("\n\t Enter a password:");
+                        Console.WriteLine("Enter a password:");
                         string password = Console.ReadLine();
                         if (password != "")
                         {
                             string hashedPassword = encrypt.EncryptPassword(password);
-                            Console.WriteLine("\n\tPassword Hash: " + hashedPassword);
-                            Console.WriteLine("\n\tPress enter to return to the menu...");
+                            Console.WriteLine("Password Hash: " + hashedPassword);
+                            Console.WriteLine("Press enter to return to the menu...");
 
                         }
                         else if (password == "")
                         {
-                            Console.WriteLine("\t You entered null!");
-                            Console.WriteLine("\n\tPress enter to return to the menu...");
+                            Console.WriteLine("You entered null!");
+                            Console.WriteLine("Press enter to return to the menu...");
                         }
 
 
@@ -51,27 +51,27 @@ namespace PasswordHasher
 
                         break;
                     case 2: // Compare a password and a password hash and return true or false
-                        Console.WriteLine("\n\t Enter a password:");
-                        string verifyPassowrd = Console.ReadLine();
-                        Console.WriteLine("\t Enter the password hash:");
+                        Console.WriteLine("Enter a password:");
+                        string verifyPassword = Console.ReadLine();
+                        Console.WriteLine("Enter the password hash:");
                         string VerifyHash = Console.ReadLine();
-                        bool isValid = encrypt.VerifyPassword(verifyPassowrd, VerifyHash); // Validate the password with the hash and return to bool
+                        bool isValid = encrypt.VerifyPassword(verifyPassword, VerifyHash); // Validate the password with the hash and return to bool
                         if (isValid)
                         {
-                            Console.WriteLine("\n\t Password and hash matched.");
-                            Console.WriteLine("\t Press enter to return to the menu...");
+                            Console.WriteLine("Password and hash matched.");
+                            Console.WriteLine("Press enter to return to the menu...");
                             Console.ReadLine();
                             Console.Clear();
                         } else if (!isValid) 
                         {
-                            Console.WriteLine("\n\t Password and hash did NOT match.");
-                            Console.WriteLine("\t Press enter to return to the menu...");
+                            Console.WriteLine("Password and hash did NOT match.");
+                            Console.WriteLine("Press enter to return to the menu...");
                             Console.ReadLine();
                             Console.Clear();
                         }
                         break;
                     default:
-                        Console.WriteLine("\n\tPlease enter a value...");
+                        Console.WriteLine("Please enter a value...");
                         break;
                 }
 
