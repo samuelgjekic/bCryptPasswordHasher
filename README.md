@@ -4,7 +4,7 @@ This is a password hasher example that uses bCrypt to hash a password with a sal
 It first generates the salt and then hashes both the salt and the password.
 
 
-### Encryption Class
+### Encryption.cs
 The **Encryption.cs** is a class i have made that includes most tools from bCrypts libraries.
 It contains 2 methods for now, **EncryptPassword** and **VerifyPassword**
 
